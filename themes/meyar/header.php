@@ -11,19 +11,19 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<body>
 
-<header id="masthead" class="site-header">
-    <div class="container">
-        <div class="site-branding">
+<!-- Custom Navigation -->
+<header class="site-header">
+    <div class="header-container">
+        <div class="header-branding">
             <?php if (has_custom_logo()) : ?>
                 <div class="site-logo">
                     <?php the_custom_logo(); ?>
                 </div>
             <?php endif; ?>
             
-            <div class="site-title-wrap">
+            <div class="site-titles">
                 <?php if (is_front_page() && is_home()) : ?>
                     <h1 class="site-title">
                         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
@@ -37,25 +37,32 @@
                         </a>
                     </p>
                 <?php endif; ?>
-                
                 <p class="site-description"><?php bloginfo('description'); ?></p>
             </div>
         </div>
 
-        <nav id="site-navigation" class="main-navigation">
-            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-                <?php esc_html_e('Menu', 'my-custom-theme'); ?>
+        <nav class="main-navigation" id="main-navigation">
+            <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="primary-menu">
+                <span class="menu-toggle-bar"></span>
+                <span class="menu-toggle-bar"></span>
+                <span class="menu-toggle-bar"></span>
+                <span class="screen-reader-text">Menu</span>
             </button>
+            
             <?php
             wp_nav_menu(array(
                 'theme_location' => 'primary',
                 'menu_id'        => 'primary-menu',
+                'menu_class'     => 'nav-menu',
                 'container'      => false,
+                'fallback_cb'    => 'wp_page_menu',
+                'depth'          => 3
             ));
             ?>
         </nav>
     </div>
 </header>
+
 
 <div id="content" class="site-content">
     <div class="container">

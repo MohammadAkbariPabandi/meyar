@@ -301,3 +301,17 @@ function custom_post_type_articles() {
 
 }
 add_action( 'init', 'custom_post_type_articles', 0 );
+
+
+
+// Enqueue custom navigation script
+function enqueue_custom_navigation_script() {
+    wp_enqueue_script(
+        'custom-navigation',
+        get_template_directory_uri() . '/assets/js/navigation.js',
+        array(),
+        '1.0.0',
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_navigation_script');
