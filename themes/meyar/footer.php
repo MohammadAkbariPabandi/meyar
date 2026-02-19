@@ -366,7 +366,7 @@ items.forEach((item, index) => {
         });
     </script>
 
-
+<!-- برای همکاری با ما -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
 
@@ -379,9 +379,15 @@ items.forEach((item, index) => {
                 forms.forEach(form => form.classList.remove('active'));
             }
 
+            function resetAllSpans() {
+                const spans = document.querySelectorAll('.NumberSpan');
+                spans.forEach(span => span.classList.remove('active'));
+            }
+
             // حالت پیش‌فرض
             hideAllForms();
             document.getElementById('f-117').classList.add('active');
+            document.querySelector('#c-117 .NumberSpan').classList.add('active');
 
             cards.forEach(card => {
                 card.addEventListener('click', function () {
@@ -390,18 +396,22 @@ items.forEach((item, index) => {
                     const cardTitle = this.querySelector('.collaboration-card h1').innerText;
 
                     hideAllForms();
+                    resetAllSpans();
 
+                    // نمایش فرم مربوطه
                     const targetForm = document.getElementById(formId);
-                    if (targetForm) {
-                        targetForm.classList.add('active');
-                    }
+                    if (targetForm) targetForm.classList.add('active');
 
                     // تغییر عنوان فرم
                     if (formTitle && cardTitle) {
                         formTitle.innerText = cardTitle;
                     }
 
-                    // اسکرول نرم
+                    // فعال کردن span کارت کلیک شده
+                    const span = this.querySelector('.NumberSpan');
+                    if (span) span.classList.add('active');
+
+                    // اسکرول نرم به فرم
                     formSection.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
