@@ -14,7 +14,7 @@ get_header(); ?>
             <div class="row">
                 <div class="col-6 collaboration-item-right" id="c-117">
                     <div class="line"></div>
-                    <span class="Dana-Bold">01</span>
+                    <span class="Dana-Bold NumberSpan">01</span>
                     <div class="collaboration-card">
                         <h1 class="Dana-ExtraBold">همکاری آموزشی</h1>
                         <p class="Dana-DemiBold">اساتیـد و مدرسیـن محترم می‌توانند با تکمیـل ایـن فرم، دوره‌هـای پیشنـهادی خود را ارائه نمایند.</p>
@@ -29,9 +29,9 @@ get_header(); ?>
                 </div>
                 <div class="col-6 collaboration-item-left" id="c-118">
                     <div class="line"></div>
-                    <span class="Dana-Bold">02</span>
+                    <span class="Dana-Bold NumberSpan">02</span>
                     <div class="collaboration-card">
-                        <h1 class="Dana-ExtraBold">همکاری سازمانی</h1>
+                        <h1 class="Dana-ExtraBold">درخواست خدمات</h1>
                         <p class="Dana-DemiBold">سـازمـان‌هـا و شـرکـت‌ها مـی‌تواننـد بـا تکمیل این فرم، خدمات مورد نیاز خود را از معیار درخواست نمایند.</p>
                     </div>
                 </div>
@@ -39,9 +39,9 @@ get_header(); ?>
             <div class="row">
                 <div class="col-6 collaboration-item-right" id="c-119">
                     <div class="line"></div>
-                    <span class="Dana-Bold">03</span>
+                    <span class="Dana-Bold NumberSpan">03</span>
                     <div class="collaboration-card">
-                        <h1 class="Dana-ExtraBold">هـم‌افـزایـی و مشـارکـت</h1>
+                        <h1 class="Dana-ExtraBold">هـم‌افـزایـی و مشـارکـت با معیار</h1>
                         <p class="Dana-DemiBold">سایر برندها با تکمیل این فرم، می‌توانند محصولات و یـا خدمـات خود را با معیار به اشتراک بگذارند.</p>
                     </div>
                 </div>
@@ -54,9 +54,9 @@ get_header(); ?>
                 </div>
                 <div class="col-6 collaboration-item-left" id="c-120">
                     <div class="line"></div>
-                    <span class="Dana-Bold">04</span>
+                    <span class="Dana-Bold NumberSpan">04</span>
                     <div class="collaboration-card">
-                        <h1 class="Dana-ExtraBold">فرصتهای شغلی</h1>
+                        <h1 class="Dana-ExtraBold">فرصتهای شغلی معیار</h1>
                         <p class="Dana-DemiBold">اشخاص حقیقی که درخواست همکاری بـا معیـار را دارنـد بـا تکمیـل ایـن فـرم، رزومه خود را ارسال نمایند.</p>
                     </div>
                 </div>

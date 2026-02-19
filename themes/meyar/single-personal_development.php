@@ -66,7 +66,7 @@ get_header(); ?>
                 <div class="spd-parts-items-body">
                     <!-- bayad matn bashad ba ghabliyat text ya list ya ... -->
                     <div class="Dana-Medium spd-parts-items-content">
-                       <?php echo esc_html(  the_content($level2->ID) ); ?>
+                       <?php echo esc_html(the_content($level2->ID) ); ?>
                     </div>
                     <div class="spd-parts-item">
                         <div class="row">
@@ -99,8 +99,25 @@ get_header(); ?>
                                             <?php endif; ?>
                                         </p>
                                     </div>
+                                    <div class="showTizerPopup">
+                                        <div class="popup-content">
+                                            <div class="popup-loader active"><span></span></div>
+                                            <button class="popup-close" aria-label="بستن">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="10" cy="10" r="10" fill="#FDB913"/>
+                                                <path d="M11.5945 6.32227C12.2853 5.63148 13.4055 5.63168 14.0964 6.32227C14.7873 7.01314 14.7873 8.13334 14.0964 8.82422L12.7097 10.21L14.0945 11.5947C14.7854 12.2856 14.7854 13.4058 14.0945 14.0967C13.4036 14.7871 12.2833 14.7874 11.5925 14.0967L10.2078 12.7119L8.82593 14.0947C8.13505 14.7856 7.01485 14.7856 6.32397 14.0947C5.63339 13.4038 5.6332 12.2836 6.32397 11.5928L7.70581 10.21L6.32202 8.8252C5.63141 8.1343 5.63123 7.01403 6.32202 6.32324C7.01282 5.63253 8.1331 5.63265 8.82397 6.32324L10.2078 7.70801L11.5945 6.32227Z" fill="white"/>
+                                                </svg>
+                                            </button>
+                                            <div class="spd-parts-item-card-popup">
+                                                <h1 class="Dana-DemiBold"><?php echo esc_html($level3->post_title); ?></h1>
+                                                <div class="Dana-Medium">
+                                                    <?php echo apply_filters('the_content', $level3->post_content); ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                        <?php
+                            <?php
                                     $level3_index++;
                                 endforeach;
                             endif;

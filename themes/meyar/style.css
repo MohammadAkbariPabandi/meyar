@@ -347,6 +347,7 @@ body {
         border-bottom: 1px solid var(--Zodiac);
         display: flex;
         justify-content: space-between;
+        color: var(--Zodiac);
     }
     .nav-menu .sub-menu{
         border: none;
@@ -389,6 +390,10 @@ body {
     .site-logo img {
         width: 100%;
     }
+
+}
+
+@media (max-width: 576px) {
 
 }
 
@@ -1041,8 +1046,9 @@ body {
 
 .footer-right p{
     text-align: justify;
-    line-height: 27px;
+    line-height: 37px;
     margin: 0;
+    padding-left: 30px;
 }
 .footer-midel {
     height: -webkit-fill-available;
@@ -1079,8 +1085,7 @@ body {
 .footer-left-media{
     display: flex;
     justify-content: space-between;
-    margin-top: 90px;
-    padding-inline: 10px;
+    margin-top: 50px;
 }
 .footer-left-media img{
     width: 40px;
@@ -1525,7 +1530,7 @@ body {
 }
 
 .services-head-right{
-    padding-bottom: 180px;
+    padding-bottom: 80px;
 }
 .services-head-right img{
     width: 100%;
@@ -2098,7 +2103,7 @@ body {
     color: var(--PastelBlue);
     font-size: 14px;
     height: 40px;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .spd-parts-item-card:hover{
@@ -2612,6 +2617,9 @@ body {
     padding-bottom: 30px;
     border-bottom: 1px solid var(--orange);
 }
+.basePages-header .contactUs-header img{
+    width: 100%;
+}
 /* Mobile Styles */
 @media (max-width: 768px) {
     .contactUs-header img{
@@ -2647,6 +2655,7 @@ body {
     padding-left: 60px;
     padding-bottom: 60px;
     position: relative;
+    padding-right: 35px !important;
 }
 .basePages-card{
     background-color: var(--White);
@@ -2658,7 +2667,7 @@ body {
 }
 .basePages-card-shadow{
     position: absolute;
-    left: -17px;
+    left: -11px;
     top: -27px;
     width: 95%;
     height: 73%;
@@ -2693,8 +2702,10 @@ body {
     width: 90px;
     height: 53px;
     border-radius: 0 50px 50px 0;
+    align-items: center;
+    padding-right: 12px;
 }
-.bacePages-card-image{
+.bacePages-card-imag{
     /* background: linear-gradient(223.67deg, #75EABA 22.99%, #16C8B3 74.42%); */
     padding: 10px;
     margin: 3px;
@@ -2710,6 +2721,25 @@ body {
     }
     .basePages {
         padding-bottom: 50px;
+    }
+    .basePages-card-icon{
+        width: 45px;
+        height: 40px;
+        bottom: 25px;
+    }
+    .basePages-card-des{
+        padding-left: 30px;
+        font-size: 12px;
+    }
+    .basePage-item {
+        padding-right: calc(var(--bs-gutter-x) * .5) !important;
+    }
+    .basePages-card-title{
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .basePages-card-body img{
+        height: 120px;
     }
 }
 
@@ -2818,13 +2848,16 @@ body {
     transform: translate(-50%, -50%);
     background: var(--White);
     width: 35%;
-    height: 400px;
-    max-width: 800px;
+    /* height: 400px; */
+    max-width: 80vh;
     border-radius: 12px;
     overflow: hidden;
 }
 .showTizerPopup iframe{
-    height: 400px; 
+    width: 100%;
+    aspect-ratio: 16 / 12;
+    height: auto;
+    display: block; 
 }
 
 .popup-close {
@@ -2862,6 +2895,20 @@ body {
     border-top-color: #FDB913;
     border-radius: 50%;
     animation: spin 1s linear infinite;
+}
+
+.spd-parts-item-card-popup{
+    height: 250px;
+    padding: 50px 40px 10px 20px;
+    overflow: auto;
+}
+.spd-parts-item-card-popup h1{
+    color: var(--Zodiac);
+    font-size: 14px;
+}
+.spd-parts-item-card-popup p{
+    color: #696969;
+    font-size: 12px;
 }
 
 @keyframes spin {
@@ -2967,17 +3014,6 @@ body {
     position: absolute;
     left: -8px;
     top: 25px;
-    width: 50px;
-    height: 50px;
-    background-color: var(--White);
-    border: 5px solid var(--White);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: inset 0px 1px 4px rgba(27, 50, 129, 0.65);
-    color: var(--Zodiac);
-    padding-top: 3px;
 }
 .collaboration-item-right .line{
     position: absolute;
@@ -2995,6 +3031,8 @@ body {
     position: absolute;
     right: -41px;
     top: 25px;
+}
+.NumberSpan{
     width: 50px;
     height: 50px;
     background-color: var(--White);
@@ -3006,6 +3044,10 @@ body {
     box-shadow: inset 0px 1px 4px rgba(27, 50, 129, 0.65);
     color: var(--Zodiac);
     padding-top: 3px;
+}
+/* حالت فعال span */
+.NumberSpan.active {
+    background-color: #75EABA;
 }
 .collaboration-item-left .line{
     position: absolute;
