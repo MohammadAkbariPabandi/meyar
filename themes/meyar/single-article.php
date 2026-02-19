@@ -3,12 +3,13 @@
 <main id="main">
     <section class="basePages">
         <div class="container basePages-header">
-            <div class="row contactUs-header">
-                <div class="col-md-6 contactUs-title">
+            <div class="row contactUs-header mb-0">
+                <div class="col-md-4 contactUs-title">
                     <h1 class="Dana-Black">دانشنامه</h1>
                     <h2 class="Dana-Regular">Articles</h2>
                 </div>
-                <div class="col-md-6 contactUs-image">
+                <div class="col-md-8 contactUs-image">
+                     <img  src="<?php echo get_template_directory_uri(); ?>/assets/images/singleArtivleHero.png" alt="">
                 </div>
             </div>
         <?php

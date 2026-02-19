@@ -11,11 +11,9 @@
             
             <div class="row">
                 <div class="col-md-5 footer-right">
-                    <h5 class="mb-3 Dana-Bold">معیار در یک نگاه</h5>
-                    <p class="Dana-Regular">معیار به‌عنوان یک بانک جامع خدمات روانشناختی، مدیریت سازمانی و منابع انسانی، مجموعه‌ای متشکل از بیش از ۵۰ کارگروه تخصصی و سازمانی است که شامل مشاوران و متخصصان حوزه روانشناسی بالینی و صنعتی-سازمانی، مهندسان صنایع، اساتید دانشگاه، روان‌سنجان، کارشناسان بهداشت و ایمنی و سایر حرفه‌ای‌های مرتبط می‌باشد.
-                        معيار در يك نگاه
-                        معیار با تکیه بر دانش فنی، علمی و سال‌ها تجربه، هدف دارد شبکه‌ای تخصصی و یکپارچه ایجاد کند تا سازمان‌ها بتوانند تمامی نیازهای خود در این حوزه‌ها را برطرف کنند و نیازی به مراجعه به منابع و سایت‌های مختلف برای دریافت خدمات متنوع نداشته باشند.
-                        در مجموعه معیار، ما فضایی فراهم کرده‌ایم تا شما با اطمینان خاطر بتوانید به آرمان‌ها و اهداف سازمانی خود دست یابید.
+                    <h5 class="mb-3 Dana-Bold">معیــار در یک نــگاه</h5>
+                    <p class="Dana-Regular">
+                         معیار با اتکاء به دانش فنی و علمی و سال ها تجربه خود بر آنست، شبکه ای تخصصی  و یکپارچه ایجاد نماید تا سازمان ها بتوانند تمام نیازهای خود را در این خصوص مرتفع ساخته و متولیان امر در سازمان‌ها را از مراجعه به منابع و پایگاه‌های مختلف جهت دسترسی به خدمات گوناگون بی‌نیاز سازد. ما در مجموعه معیار فرصتی را فراهم ساخته‌ایم تا شما با خاطری آسوده به آرمان ها و اهداف سازمانی خود دست یابید .
                     </p>
                 </div>
                 <div class="col-md-3">
@@ -43,7 +41,13 @@
                                 <span>
                                     <img  src="<?php echo get_template_directory_uri(); ?>/assets/images/PhoneIcone.png" alt="">
                                 </span>
-                               ۰۲۱-۲۲۲ ۳۳ ۴۴
+                                ۰۲۱-۸۸۲۱۰۶۵۵
+                        </h5>
+                        <h5 class="Dana-Bold">
+                                <span>
+                                    <img  src="<?php echo get_template_directory_uri(); ?>/assets/images/mobileicon.png" alt="">
+                                </span>
+                                ۰۹۰۲-۵۵۵۵۳۰۴
                         </h5>
                     </div>
                     <div class="footer-left-media">
@@ -149,49 +153,52 @@
             }
         });
     </script>
-     <script>
-        const items = document.querySelectorAll(".spd-parts-items");
-        items.forEach((item, index) => {
-            if (index === 0) {
-                item.querySelector(".spd-parts-items-body").classList.add("open");
-                item.querySelector(".spd-parts-items-title-number").classList.add("open");
-                // Also, set the icons for the first item
-                const icon1 = item.querySelector(".spd-parts-items-title-body-Icon2");
-                const icon2 = item.querySelector(".spd-parts-items-title-body-Icon1");
-                icon1.style.display = "none";
-                icon2.style.display = "block";
-            }
-            else{
-                const icon1 = item.querySelector(".spd-parts-items-title-body-Icon2");
-                const icon2 = item.querySelector(".spd-parts-items-title-body-Icon1");
-                icon2.style.display = "none";
-                icon1.style.display = "block";
-            }
+<script>
+const items = document.querySelectorAll(".spd-parts-items");
 
+items.forEach((item, index) => {
+    const body = item.querySelector(".spd-parts-items-body");
+    const number = item.querySelector(".spd-parts-items-title-number");
+    const iconOpen = item.querySelector(".spd-parts-items-title-body-Icon1");
+    const iconClose = item.querySelector(".spd-parts-items-title-body-Icon2");
+
+    if (index === 0) {
+        body.classList.add("open");
+        number.classList.add("open");
+        iconOpen.style.display = "block";
+        iconClose.style.display = "none";
+    } else {
+        iconOpen.style.display = "none";
+        iconClose.style.display = "block";
+    }
+
+    item.querySelector(".spd-parts-items-title-body").addEventListener("click", () => {
+        // بستن همه آیتم‌ها
+        items.forEach(i => {
+            i.querySelector(".spd-parts-items-body").classList.remove("open");
+            i.querySelector(".spd-parts-items-title-number").classList.remove("open");
+            i.querySelector(".spd-parts-items-title-body-Icon1").style.display = "none";
+            i.querySelector(".spd-parts-items-title-body-Icon2").style.display = "block";
         });
 
-        items.forEach(item => {
-            item.querySelector(".spd-parts-items-title-body").addEventListener("click", () => {
-                items.forEach(i => {
-                    i.querySelector(".spd-parts-items-body").classList.remove("open");
-                    i.querySelector(".spd-parts-items-title-number").classList.remove("open");
-                    // Also reset the icons for all items
-                    const icon1 = i.querySelector(".spd-parts-items-title-body-Icon2");
-                    const icon2 = i.querySelector(".spd-parts-items-title-body-Icon1");
-                    icon1.style.display = "block";
-                    icon2.style.display = "none";
-                });
-                item.querySelector(".spd-parts-items-body").classList.add("open");
-                item.querySelector(".spd-parts-items-title-number").classList.add("open");
-                // Set the icons for the clicked item
-                const icon1 = item.querySelector(".spd-parts-items-title-body-Icon2");
-                const icon2 = item.querySelector(".spd-parts-items-title-body-Icon1");
-                icon1.style.display = "none";
-                icon2.style.display = "block";
-            });
-        });
+        // باز کردن آیتم کلیک شده
+        body.classList.add("open");
+        number.classList.add("open");
+        iconOpen.style.display = "block";
+        iconClose.style.display = "none";
 
-    </script>
+        // اسکرول به آیتم کلیک شده با فاصله 70px
+        const offset = 170;
+        const top = item.getBoundingClientRect().top + window.pageYOffset - offset;
+
+        window.scrollTo({
+            top: top,
+            behavior: "smooth"
+        });
+    });
+});
+</script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const searchInput = document.querySelector('.c-filter-form-control');
@@ -404,6 +411,58 @@
 
         });
     </script>
+ <!-- برای پاپ آپ کارت آزمونها -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    // باز شدن پاپ‌آپ کارت آزمون‌ها
+    document.querySelectorAll(".spd-parts-item-card").forEach(card => {
+
+        card.addEventListener("click", function () {
+
+            const popup  = this.nextElementSibling;
+            if (!popup || !popup.classList.contains("showTizerPopup")) return;
+
+            const loader = popup.querySelector(".popup-loader");
+
+            // 1. پاپ‌آپ باز شود
+            popup.classList.add("active");
+
+            // 2. لودر فعال
+            if (loader) loader.classList.add("active");
+
+            // 3. شبیه‌سازی پایان لود محتوا
+            // (چون محتوا PHP هست و iframe نداری)
+            setTimeout(() => {
+                if (loader) loader.classList.remove("active");
+            }, 300); // می‌تونی 0 یا 200 بذاری
+        });
+
+    });
+
+    // بستن پاپ‌آپ
+    document.querySelectorAll(".showTizerPopup").forEach(popup => {
+        popup.addEventListener("click", function (e) {
+            if (
+                e.target.classList.contains("popup-overlay") ||
+                e.target.closest(".popup-close")
+            ) {
+                closePopup(popup);
+            }
+        });
+    });
+
+    function closePopup(popup) {
+        popup.classList.remove("active");
+
+        const loader = popup.querySelector(".popup-loader");
+
+        // ریست لودر برای دفعه بعد
+        if (loader) loader.classList.add("active");
+    }
+
+});
+</script>
 
 
 

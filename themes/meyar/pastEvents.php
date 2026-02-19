@@ -41,8 +41,8 @@ get_header(); ?>
                         </div>
                         <div class="col-md-10 col-7">
                             <h1 class="Dana-Black"><?php the_title(); ?></h1>
-                            <div class="events-card-summary">
-                                <p class="Dana-Regular"><?php the_excerpt(); ?></p>
+                            <div class="Dana-Regular events-card-summary">
+                                <?php the_content(); ?>
                             </div>
                         </div>
                     </div>

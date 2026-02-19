@@ -393,6 +393,10 @@ body {
 
 }
 
+@media (max-width: 576px) {
+
+}
+
 /* Desktop dropdown arrow */
 .nav-menu .menu-item-has-children > a::after {
     content: '>';
@@ -1042,8 +1046,9 @@ body {
 
 .footer-right p{
     text-align: justify;
-    line-height: 27px;
+    line-height: 37px;
     margin: 0;
+    padding-left: 30px;
 }
 .footer-midel {
     height: -webkit-fill-available;
@@ -1080,8 +1085,7 @@ body {
 .footer-left-media{
     display: flex;
     justify-content: space-between;
-    margin-top: 90px;
-    padding-inline: 10px;
+    margin-top: 50px;
 }
 .footer-left-media img{
     width: 40px;
@@ -1526,7 +1530,7 @@ body {
 }
 
 .services-head-right{
-    padding-bottom: 180px;
+    padding-bottom: 80px;
 }
 .services-head-right img{
     width: 100%;
@@ -2099,7 +2103,7 @@ body {
     color: var(--PastelBlue);
     font-size: 14px;
     height: 40px;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .spd-parts-item-card:hover{
@@ -2839,13 +2843,16 @@ body {
     transform: translate(-50%, -50%);
     background: var(--White);
     width: 35%;
-    height: 400px;
-    max-width: 800px;
+    /* height: 400px; */
+    max-width: 80vh;
     border-radius: 12px;
     overflow: hidden;
 }
 .showTizerPopup iframe{
-    height: 400px; 
+    width: 100%;
+    aspect-ratio: 16 / 12;
+    height: auto;
+    display: block; 
 }
 
 .popup-close {
@@ -2883,6 +2890,20 @@ body {
     border-top-color: #FDB913;
     border-radius: 50%;
     animation: spin 1s linear infinite;
+}
+
+.spd-parts-item-card-popup{
+    height: 250px;
+    padding: 50px 40px 10px 20px;
+    overflow: auto;
+}
+.spd-parts-item-card-popup h1{
+    color: var(--Zodiac);
+    font-size: 14px;
+}
+.spd-parts-item-card-popup p{
+    color: #696969;
+    font-size: 12px;
 }
 
 @keyframes spin {
