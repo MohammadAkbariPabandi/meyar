@@ -4,7 +4,6 @@
  */
 ?>
 
-
 <section class="heroSection">
     <div class="container">
     <div class="row">
@@ -18,7 +17,7 @@
             </h1>
             <div class="heroSection-content-btns">
                 <a class="buttonTroy Dana-Bold meyar-yello-btn" href="#">درخواست دمو</a>
-                <a class="mx-3 buttonTroy Dana-Bold meyar-white-btn" href="<?php echo get_template_directory_uri(); ?>/assets/Files/c.pdf"download>دریافت کاتالوگ</a>
+                <a class="mx-3 buttonTroy Dana-Bold meyar-white-btn" href="<?php echo get_template_directory_uri(); ?>/assets/Files/catalog.pdf"download>دریافت کاتالوگ</a>
             </div>
         </div>
         <div class="col-md-8 d-flex justify-content-center">
@@ -33,8 +32,6 @@
     </div>
     </div>
 </section>
-
-
 <section class="whySection" >
     <h1 class="Dana-Black">
         <?php if ( get_field('titlesection2') ) : ?>
@@ -75,7 +72,6 @@
         </div> 
     </div>     
 </section>
-
 <section class="serviseSection">
     <h1 class="sectionTitle Dana-Black">ارائه خدمات</h1>
     <div class="container">
@@ -133,7 +129,6 @@
         </div>
     </div>
 </section>
-
 <section class="newsSection">
 <div class="container">
     <div class="row">
@@ -388,7 +383,6 @@
     </div>
 </div> 
 </section>
-
 <section class="FAQSection">
     <h1 class="sectionTitle Dana-Black mb-4">سوالات متداول</h1>
     <div class="FAQSection-items container">
