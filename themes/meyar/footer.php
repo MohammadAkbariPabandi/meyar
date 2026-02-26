@@ -57,7 +57,7 @@
                         <a href="#">
                             <img  src="<?php echo get_template_directory_uri(); ?>/assets/images/youtube.png" alt="">
                         </a>
-                        <a href="#">
+                        <a href="https://t.me/meyarhr">
                             <img  src="<?php echo get_template_directory_uri(); ?>/assets/images/telegram.png" alt="">
                         </a>
                         <a href="#">
@@ -71,13 +71,10 @@
             </div>
             <div class="copyRight">
                 &copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All rights reserved.
-            </div>
-            
-            
+            </div>    
         </div>
     </footer>
 
-    
     <?php wp_footer(); ?>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
     <script>

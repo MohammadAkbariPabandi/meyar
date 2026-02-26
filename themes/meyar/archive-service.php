@@ -16,7 +16,6 @@
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/ServicesHeroImage.png" alt="">
             </div>
         </div>
-
         <div class="services-items">
             <span class="services-items-line"></span>
             <div class="container">

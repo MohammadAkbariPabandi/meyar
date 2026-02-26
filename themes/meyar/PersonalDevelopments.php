@@ -20,7 +20,6 @@ get_header();
                 </div>
             </div>
         </section>
-
         <section>
             <div class="container">
                 <?php
