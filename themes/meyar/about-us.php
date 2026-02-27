@@ -3,8 +3,6 @@
  * Template Name: about-us
  */
 get_header(); ?>
-
-
 <div class="about">
     <section class="about-hero">
         <div class="container">
@@ -24,7 +22,6 @@ get_header(); ?>
             </div>
         </div>
     </section>
-
     <section class="about-why">
         <div class="container">
             <div class="row">
@@ -62,7 +59,6 @@ get_header(); ?>
             </div>
         </div>
     </section>
-
     <section class="about-overview">
         <div class="container">
             <div class="row">
@@ -98,7 +94,6 @@ get_header(); ?>
             </div>
         </div>
     </section>
-
    <section class="about-target">
         <div class="container">
             <div class="row">
@@ -117,7 +112,4 @@ get_header(); ?>
         </div>
     </section>
 </div>
-
-
-
 <?php get_footer(); ?>

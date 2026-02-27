@@ -16,7 +16,6 @@ get_header(); ?>
                 <img  src="<?php echo get_template_directory_uri(); ?>/assets/images/articleHeroImage.png" alt="">
             </div>
         </div>
-
         <div class="row basePages-cards">
             <?php
             $args = array(
@@ -80,7 +79,5 @@ get_header(); ?>
             <?php endif; wp_reset_postdata(); ?>
         </div>
     </div>
-
 </section>
-
 <?php get_footer(); ?>

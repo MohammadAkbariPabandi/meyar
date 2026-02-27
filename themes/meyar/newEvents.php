@@ -52,7 +52,4 @@ get_header(); ?>
         <?php endif; wp_reset_postdata(); ?>
     </div>
 </section>
-
-
-
 <?php get_footer(); ?>

@@ -4,7 +4,6 @@
  */
 get_header(); ?>
 
-
 <section class="basePages">
     <div class="container basePages-header">
         <div class="row contactUs-header">
@@ -77,8 +76,5 @@ get_header(); ?>
             <?php endif; wp_reset_postdata(); ?>
         </div>
     </div>
-
 </section>
-
-
 <?php get_footer(); ?>

@@ -3,8 +3,6 @@
  * Template Name: collaboration
  */
 get_header(); ?>
-
-
 <section class="collaboration">
     <div class="container">
         <div class="collaboration-bace-image">
@@ -100,5 +98,4 @@ get_header(); ?>
         </div>
     </div>
 </section>
-
 <?php get_footer(); ?>

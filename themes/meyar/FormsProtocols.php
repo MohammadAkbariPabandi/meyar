@@ -3,7 +3,6 @@
  * Template Name: formsPortocols
  */
 get_header(); ?>
-
 <section class="formsPortocols">
     <div class="container formsPortocols-body">
         <h1 class="Dana-Black">فرمها و پروتکلهای سازمانی</h1>
@@ -46,6 +45,4 @@ get_header(); ?>
         </div>
     </div>
 </section>
-
-
 <?php get_footer(); ?>

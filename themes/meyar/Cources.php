@@ -3,8 +3,6 @@
  * Template Name: courses
  */
 get_header(); ?>
-
-
 <section class="courses">
     <div class="c-body">
         <div class="container">
@@ -281,9 +279,5 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-
 </section>
-
-
-
 <?php get_footer(); ?>

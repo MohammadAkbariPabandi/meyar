@@ -3,7 +3,6 @@
  * Template Name: futureEvents
  */
 get_header(); ?>
-
 <section class="basePages">
     <div class="events">
         <div class="container">
@@ -51,6 +50,4 @@ get_header(); ?>
         <?php endif; wp_reset_postdata(); ?>
     </div>
 </section>
-
-
 <?php get_footer(); ?>
