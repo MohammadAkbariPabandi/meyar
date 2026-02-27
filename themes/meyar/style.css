@@ -15,7 +15,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 /*
 IRAN Sans-serif fonts are considered a proprietary software. To gain information about the laws regarding the use of these fonts, please visit www.fontiran.com
 --------------------------------------------------------------------------------------
-This set of fonts are used in this project under the license: (.....)
+This set of fonts are used in this project under the license: (QT49DWNA)
 --------------------------------------------------------------------------------------
 */
 @font-face { 
@@ -279,7 +279,7 @@ body {
     }
     .buttonTroy{
         padding: 8px;
-        font-size: 16px;
+        font-size: 10px;
         width: 100%;
         text-align: center;
     }
@@ -656,11 +656,11 @@ body {
 }
 .newsSection-event-card{
     padding: 50px 0 50px 20px;
-    height: -webkit-fill-available;
+    height: auto;
 }
 .newsSection-Event{
     border-radius: 50px;
-    height: -webkit-fill-available;
+    height: 100%;
     background-color: var(--White);
     box-shadow: 0px 7px 20px #00000080;
     padding: 25px 50px;
@@ -764,6 +764,7 @@ body {
     margin-top: 30px;
     font-size: 16px;
     color: var(--Zodiac);
+    height: 39px;
 }
 
 /* Improved mobile styles */
@@ -771,6 +772,7 @@ body {
     .newsSection-event-card{
         padding: 50px 0 0 0;
         margin-inline: 30px;
+        margin-bottom: 20px;
     }
     .newsSection-Event {
         border-radius: 20px;
@@ -778,6 +780,7 @@ body {
     }
     .newsSection{
         border-radius: 20px;
+        padding-bottom: 30px;
     }
     .newsSection-Event h2{
         font-size: 20px;
@@ -793,6 +796,10 @@ body {
         width: 110px;
         padding:10px 20px;
         border-radius: 15px 15px 0 0;
+    }
+    .newsSection-navTable{
+        padding-top: 20px;
+        padding-bottom: 0;
     }
     .newsSection-navTable label {
         font-size: 15px;
