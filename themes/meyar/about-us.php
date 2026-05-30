@@ -111,5 +111,32 @@ get_header(); ?>
             </div>
         </div>
     </section>
+    <section class="licenses container">
+        <div class="licenses-title">
+            <h3 class="Dana-Black">مجوزها و گواهینامه‌ها</h3>
+        </div>
+        <div class="licenses-items row">
+            <?php
+            $args = array(
+                'post_type'      => 'licenses',
+                'posts_per_page' => -1,
+                'post_status'    => 'publish'
+            );
+            $licenses_query = new WP_Query($args);
+            if ($licenses_query->have_posts()) :
+                while ($licenses_query->have_posts()) : $licenses_query->the_post();
+            ?>
+                <div class="col-md-4 col-6 licenses-item">
+                    <?php if ( get_field('licensesheroimage') ) : ?>
+                        <img src="<?php echo get_field('licensesheroimage')['url']; ?>" alt="<?php the_title(); ?>">
+                    <?php endif; ?>
+                </div>
+            <?php
+                endwhile;
+                wp_reset_postdata();
+            endif;
+            ?>
+        </div>
+    </section>
 </div>
 <?php get_footer(); ?>

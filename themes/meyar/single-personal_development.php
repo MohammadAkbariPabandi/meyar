@@ -66,7 +66,10 @@ get_header(); ?>
                 <div class="spd-parts-items-body">
                     <!-- bayad matn bashad ba ghabliyat text ya list ya ... -->
                     <div class="Dana-Medium spd-parts-items-content">
-                       <?php echo esc_html(the_content($level2->ID) ); ?>
+                       <?php 
+    $content = apply_filters('the_content', $level2->post_content);
+    echo wp_kses_post($content); 
+?>
                     </div>
                     <div class="spd-parts-item">
                         <div class="row">

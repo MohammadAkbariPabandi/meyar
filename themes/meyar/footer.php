@@ -15,6 +15,21 @@
                     <p class="Dana-Regular">
                          معیار با اتکاء به دانش فنی و علمی و سال ها تجربه خود بر آنست، شبکه ای تخصصی  و یکپارچه ایجاد نماید تا سازمان ها بتوانند تمام نیازهای خود را در این خصوص مرتفع ساخته و متولیان امر در سازمان‌ها را از مراجعه به منابع و پایگاه‌های مختلف جهت دسترسی به خدمات گوناگون بی‌نیاز سازد. ما در مجموعه معیار فرصتی را فراهم ساخته‌ایم تا شما با خاطری آسوده به آرمان ها و اهداف سازمانی خود دست یابید .
                     </p>
+                        <?php 
+                        $catalog_link = get_theme_mod('catalog_file');
+
+                        if ($catalog_link) : ?>
+                            <a class="buttonTroy Dana-Bold meyar-yello-btn" 
+                            href="<?php echo esc_url($catalog_link); ?>" download>
+                            دریافت کاتالوگ
+                            </a>
+                        <?php else: ?>
+                            <a class="buttonTroy Dana-Bold meyar-yello-btn" 
+                            href="#">
+                            فایل کاتالوگ تنظیم نشده
+                            </a>
+                        <?php endif; ?>
+
                 </div>
                 <div class="col-md-3">
                         <?php

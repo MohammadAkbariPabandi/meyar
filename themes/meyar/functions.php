@@ -593,3 +593,131 @@ function custom_post_type_customers() {
 
 }
 add_action( 'init', 'custom_post_type_customers', 0 );
+
+// Register Custom Post Type for license
+function custom_post_type_licenses() {
+
+    $labels = array(
+        'name'                  => _x( 'licenses', 'Post Type General Name', 'text_domain' ),
+        'singular_name'         => _x( 'license', 'Post Type Singular Name', 'text_domain' ),
+        'menu_name'             => __( 'licenses', 'text_domain' ),
+        'name_admin_bar'        => __( 'license', 'text_domain' ),
+        'archives'              => __( 'license Archives', 'text_domain' ),
+        'attributes'            => __( 'license Attributes', 'text_domain' ),
+        'parent_item_colon'     => __( 'Parent license:', 'text_domain' ),
+        'all_items'             => __( 'All license', 'text_domain' ),
+        'add_new_item'          => __( 'Add New license', 'text_domain' ),
+        'add_new'               => __( 'Add New', 'text_domain' ),
+        'new_item'              => __( 'New license', 'text_domain' ),
+        'edit_item'             => __( 'Edit license', 'text_domain' ),
+        'update_item'           => __( 'Update license', 'text_domain' ),
+        'view_item'             => __( 'View license', 'text_domain' ),
+        'view_items'            => __( 'View license', 'text_domain' ),
+        'search_items'          => __( 'Search license', 'text_domain' ),
+        'not_found'             => __( 'Not found', 'text_domain' ),
+        'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
+        'featured_image'        => __( 'Featured Image', 'text_domain' ),
+        'set_featured_image'    => __( 'Set featured image', 'text_domain' ),
+        'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
+        'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
+        'insert_into_item'      => __( 'Insert into license', 'text_domain' ),
+        'uploaded_to_this_item' => __( 'Uploaded to this license', 'text_domain' ),
+        'items_list'            => __( 'licenses list', 'text_domain' ),
+        'items_list_navigation' => __( 'licenses list navigation', 'text_domain' ),
+        'filter_items_list'     => __( 'Filter licenses list', 'text_domain' ),
+    );
+    $args = array(
+        'label'                 => __( 'license', 'text_domain' ),
+        'description'           => __( 'Post Type for licenses', 'text_domain' ),
+        'labels'                => $labels,
+        'supports'              => array( 'title', 'editor', 'thumbnail', 'comments', 'revisions' ,'page-attributes' ),
+        'taxonomies'            => array( 'category', 'post_tag' ),
+        'hierarchical'          => true,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'menu_position'         => 5,
+        'show_in_admin_bar'     => true,
+        'show_in_nav_menus'     => true,
+        'can_export'            => true,
+        'has_archive'           => true,
+        'exclude_from_search'   => false,
+        'publicly_queryable'    => true,
+        'capability_type'       => 'post',
+    );
+    register_post_type( 'licenses', $args );
+
+}
+add_action( 'init', 'custom_post_type_licenses', 0 );
+
+
+function catalog_file_customizer($wp_customize) {
+
+    $wp_customize->add_section('catalog_section', array(
+        'title'    => 'تنظیمات کاتالوگ',
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('catalog_file', array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url'
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Upload_Control(
+            $wp_customize,
+            'catalog_file',
+            array(
+                'label'    => 'آپلود فایل کاتالوگ',
+                'section'  => 'catalog_section',
+                'settings' => 'catalog_file'
+            )
+        )
+    );
+}
+add_action('customize_register', 'catalog_file_customizer');
+
+
+
+function meyar_search_all_post_types($query) {
+
+    if ($query->is_search() && $query->is_main_query() && !is_admin()) {
+
+        $query->set('post_type', array(
+            'post',
+            'course',
+            'service',
+            'personal_development',
+            'article',
+            'event',
+            'news',
+            'faq'
+        ));
+
+    }
+
+}
+add_action('pre_get_posts','meyar_search_all_post_types');
+
+function meyar_empty_search_redirect() {
+
+    if ( is_search() && get_search_query() == '' ) {
+
+        wp_redirect( home_url('/search/') );
+        exit;
+    }
+}
+add_action('template_redirect', 'meyar_empty_search_redirect');
+
+function highlight_search_results($text) {
+    if (is_search()) {
+        $query = get_search_query();
+        if ($query && !is_admin()) {
+            $text = preg_replace('/(' . preg_quote($query, '/') . ')/iu', '<span class="search-highlight">$1</span>', $text);
+        }
+    }
+    return $text;
+}
+// اعمال فیلتر روی عنوان و محتوا/خلاصه
+add_filter('the_title', 'highlight_search_results');
+add_filter('the_excerpt', 'highlight_search_results');

@@ -45,7 +45,6 @@
                                                                               ">
                                     </span>
                                     <div class="services-item-card">
-                                        <a href="<?php the_permalink(); ?>">
                                             <div class="services-item-card-right" style="background-color: 
                                                                                     <?php if ($i == 0 || $i == 3 || $i == 4) { ?>
                                                                                         #FDB913
@@ -56,6 +55,7 @@
                                                 <h1 class="Dana-ExtraBold"><?php echo $i+1 ?></h1>
                                                 <h2 class="mt-3 Dana-ExtraBlack"><?php the_title(); ?></h2>
                                             </div>
+                                        <a href="<?php the_permalink(); ?>">
                                             <div class="Dana-Regular services-item-card-left">
                                                 <p>
                                                     <?php if ( get_field('servicessummary') ) : ?>

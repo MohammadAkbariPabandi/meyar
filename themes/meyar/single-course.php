@@ -14,7 +14,7 @@ get_header();?>
             </div>
         </div>
         <div class="c-body-image">
-            <img  src="<?php echo get_template_directory_uri(); ?>/assets/images/coursesHeroImage.png" alt="">
+            <img  src="<?php echo get_template_directory_uri(); ?>/assets/images/chi.png" alt="">
         </div>
     </div>
     <div class="container singleCourse-body">
@@ -33,10 +33,10 @@ get_header();?>
         </div>
         <!-- content bayad kamel style dade shavad h1 li ui p ....  -->
         <div class="row singleCourse-body-content">
-            <div class="col-md-9 Dana-Mixed singleCourse-body-content-text">
+            <div class="col-md-7 Dana-Medium singleCourse-body-content-text">
                  <?php the_content(); ?>
             </div>
-            <div class="col-md-3 singleCourse-body-content-image">
+            <div class="col-md-5 singleCourse-body-content-image">
                 <?php if ( get_field('coursesheroimage') ) : ?>
                     <img src="<?php echo get_field('coursesheroimage')['url']; ?>" alt="">
                 <?php endif; ?> 
@@ -208,46 +208,53 @@ get_header();?>
             <div class="row">
                 <?php
                     $current_post_id = get_the_ID();
-                    // گرفتن کتگوری‌های دوره فعلی
-                    $terms = wp_get_post_terms( $current_post_id, 'course_cat', array(
+                    
+                    $terms = wp_get_post_terms( $current_post_id, 'category', array(
                         'fields' => 'ids'
                     ));
-                    $args = array(
-                        'post_type'      => 'course',
-                        'posts_per_page' => 6,
-                        'orderby'        => 'menu_order',
-                        'order'          => 'ASC',
-                        'post__not_in'   => array( $current_post_id ),
-                    );
-                    // فقط اگر کتگوری داشت، فیلتر taxonomy اعمال شود
-                    if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-                        $args['tax_query'] = array(
-                            array(
-                                'taxonomy' => 'course_cat',
-                                'field'    => 'term_id',
-                                'terms'    => $terms,
+                    
+                    if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) :
+                    
+                        $args = array(
+                            'post_type'      => 'course',
+                            'posts_per_page' => 6,
+                            'orderby'        => 'menu_order',
+                            'order'          => 'ASC',
+                            'post__not_in'   => array( $current_post_id ),
+                            'tax_query'      => array(
+                                array(
+                                    'taxonomy' => 'category',
+                                    'field'    => 'term_id',
+                                    'terms'    => $terms,
+                                )
                             )
                         );
-                    }
-                    $services_query = new WP_Query( $args );
-                    if ( $services_query->have_posts() ) :
-                        while ( $services_query->have_posts() ) : $services_query->the_post();
+                    
+                        $services_query = new WP_Query( $args );
+                    
+                        if ( $services_query->have_posts() ) :
+                            while ( $services_query->have_posts() ) : $services_query->the_post();
                     ?>
-                        <div class="col-md-2 col-4">
-                            <a href="<?php the_permalink(); ?>">
-                                <div class="otherService-card">
-                                    <?php if ( get_field('coursesicon') ) : ?>
-                                        <img src="<?php echo get_field('coursesicon')['url']; ?>" alt="">
-                                    <?php endif; ?>
-                                    <h1 class="Dana-ExtraBlack"><?php the_title(); ?></h1>
+                                <div class="col-md-2 col-4">
+                                    <a href="<?php the_permalink(); ?>">
+                                        <div class="otherService-card">
+                                            <?php if ( get_field('coursesicon') ) : ?>
+                                                <img src="<?php echo get_field('coursesicon')['url']; ?>" alt="">
+                                            <?php endif; ?>
+                                            <h1 class="Dana-ExtraBlack"><?php the_title(); ?></h1>
+                                        </div>
+                                    </a>
                                 </div>
-                            </a>
-                        </div>
                     <?php
-                        endwhile;
+                            endwhile;
+                        endif;
+                    
+                        wp_reset_postdata();
+                    
                     endif;
-                    wp_reset_postdata();
-                ?>
+                    ?>
+
+            </div>
         </div>
     </div>
 </section>
